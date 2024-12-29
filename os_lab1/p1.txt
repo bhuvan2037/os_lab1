@@ -1,0 +1,9 @@
+#include <unistd.h>
+
+int main(){
+int nread;
+char buff[20];
+printf("the pointer is at %d position\n");
+nread=read(0,buff,10);
+write(1,buff,nread);
+}

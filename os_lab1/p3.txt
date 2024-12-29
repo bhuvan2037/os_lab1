@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+void main()
+{
+int buffer[20],bufsize=10,in=0,out=0,produce,consume,choice=0;
+while (choice!=3)
+{
+printf("\n1.produce\t2.consume\t3.exit\n");
+printf("\n enter your choice");
+scanf("%d",&choice);
+switch(choice)
+{
+case 1:
+if((in+1)%bufsize==out)
+printf("buffer is full");
+else{
+printf("enter the value \n");
+scanf("%d",&produce);
+buffer[in]=produce;
+in=(in+1)%bufsize;
+}break;
+case 2:
+if(in==out)
+printf("buffer is empty");
+else{
+consume=buffer[out];
+printf(" the consumed value is %d",consume);
+out=(out+1)%bufsize;
+}
+}
+}
+}
